@@ -67,13 +67,13 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-vibrant-yellow-400">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="bg-white border-b-4 border-deep-blue-600 sticky top-0 z-40">
+      <nav className="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-8">
-              <h1 className="text-2xl font-bold text-deep-blue-800">
+              <h1 className="text-2xl font-bold text-blue-gray-800">
                 LearnTogether
               </h1>
             </div>
@@ -83,15 +83,15 @@ const Index = () => {
                 variant="outline"
                 size="sm"
                 onClick={() => setShowCreateRoom(true)}
-                className="hidden sm:flex bg-vibrant-yellow-400 text-deep-blue-800 border-deep-blue-600 hover:bg-deep-blue-600 hover:text-vibrant-yellow-400"
+                className="hidden sm:flex bg-soft-blue-100 text-royal-blue-700 border-royal-blue-300 hover:bg-royal-blue-700 hover:text-white"
               >
                 Create Room
               </Button>
-              <Button variant="ghost" size="sm" className="text-deep-blue-800 hover:bg-vibrant-yellow-200">
+              <Button variant="ghost" size="sm" className="text-blue-gray-600 hover:bg-soft-blue-100">
                 <Bell className="w-4 h-4" />
               </Button>
               <Avatar className="cursor-pointer">
-                <AvatarFallback className="bg-deep-blue-600 text-vibrant-yellow-400">
+                <AvatarFallback className="bg-royal-blue-600 text-white">
                   <User className="w-4 h-4" />
                 </AvatarFallback>
               </Avatar>
@@ -105,22 +105,22 @@ const Index = () => {
         {/* Home Section */}
         <div className="py-8 space-y-8">
           {/* Hero Section */}
-          <div className="gradient-bg rounded-2xl p-8 text-center border-4 border-deep-blue-600">
-            <h1 className="text-4xl font-bold text-deep-blue-900 mb-4">
+          <div className="gradient-bg rounded-2xl p-8 text-center border border-soft-blue-200 shadow-sm">
+            <h1 className="text-4xl font-bold text-blue-gray-900 mb-4">
               Learn Together, Grow Together
             </h1>
-            <p className="text-xl text-deep-blue-700 mb-6 max-w-2xl mx-auto">
+            <p className="text-xl text-blue-gray-600 mb-6 max-w-2xl mx-auto">
               Join a thriving community of learners. Connect, collaborate, and master new skills through live voice rooms and interactive sessions.
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Button 
                 size="lg" 
-                className="bg-deep-blue-600 text-vibrant-yellow-400 hover:bg-deep-blue-700"
+                className="bg-royal-blue-600 text-white hover:bg-royal-blue-700"
                 onClick={() => setShowCreateRoom(true)}
               >
                 Create a Room
               </Button>
-              <Button size="lg" variant="outline" className="bg-vibrant-yellow-400 text-deep-blue-800 border-deep-blue-600 hover:bg-deep-blue-600 hover:text-vibrant-yellow-400">
+              <Button size="lg" variant="outline" className="bg-soft-blue-100 text-royal-blue-700 border-royal-blue-300 hover:bg-royal-blue-700 hover:text-white">
                 Explore Skills
               </Button>
             </div>
@@ -128,10 +128,10 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Trending Skills */}
-            <Card className="hover-lift bg-white border-4 border-deep-blue-600">
+            <Card className="hover-lift bg-white border border-soft-blue-200 shadow-sm">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-deep-blue-800">
-                  <div className="w-2 h-2 bg-vibrant-yellow-500 rounded-full"></div>
+                <CardTitle className="flex items-center gap-2 text-blue-gray-800">
+                  <div className="w-2 h-2 bg-royal-blue-500 rounded-full"></div>
                   Trending Skills
                 </CardTitle>
               </CardHeader>
@@ -139,10 +139,10 @@ const Index = () => {
                 {trendingSkills.map((skill, index) => (
                   <div key={index} className="flex justify-between items-center">
                     <div>
-                      <p className="font-medium text-deep-blue-800">{skill.name}</p>
-                      <p className="text-sm text-deep-blue-600">{skill.members.toLocaleString()} members</p>
+                      <p className="font-medium text-blue-gray-800">{skill.name}</p>
+                      <p className="text-sm text-blue-gray-600">{skill.members.toLocaleString()} members</p>
                     </div>
-                    <Badge variant="secondary" className="text-deep-blue-700 bg-vibrant-yellow-200">
+                    <Badge variant="secondary" className="text-royal-blue-700 bg-soft-blue-100">
                       {skill.growth}
                     </Badge>
                   </div>
@@ -151,26 +151,26 @@ const Index = () => {
             </Card>
 
             {/* Live Rooms */}
-            <Card className="hover-lift lg:col-span-2 bg-white border-4 border-deep-blue-600">
+            <Card className="hover-lift lg:col-span-2 bg-white border border-soft-blue-200 shadow-sm">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-deep-blue-800">
+                <CardTitle className="flex items-center gap-2 text-blue-gray-800">
                   <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
                   Live Learning Rooms
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {liveRooms.map((room) => (
-                  <div key={room.id} className="border-2 border-vibrant-yellow-400 rounded-lg p-4 hover:bg-vibrant-yellow-100 transition-colors">
+                  <div key={room.id} className="border border-soft-blue-200 rounded-lg p-4 hover:bg-soft-blue-50 transition-colors">
                     <div className="flex justify-between items-start mb-2">
                       <div>
-                        <h4 className="font-semibold text-deep-blue-800">{room.title}</h4>
-                        <p className="text-sm text-deep-blue-600">Hosted by {room.host}</p>
+                        <h4 className="font-semibold text-blue-gray-800">{room.title}</h4>
+                        <p className="text-sm text-blue-gray-600">Hosted by {room.host}</p>
                       </div>
-                      <Badge variant={room.type === 'voice' ? 'default' : 'secondary'} className={room.type === 'voice' ? 'bg-deep-blue-600 text-vibrant-yellow-400' : 'bg-vibrant-yellow-400 text-deep-blue-800'}>
+                      <Badge variant={room.type === 'voice' ? 'default' : 'secondary'} className={room.type === 'voice' ? 'bg-royal-blue-600 text-white' : 'bg-soft-blue-100 text-royal-blue-700'}>
                         {room.type === 'voice' ? '🎤 Voice' : '💬 Chat'}
                       </Badge>
                     </div>
-                    <div className="flex items-center justify-between text-sm text-deep-blue-600">
+                    <div className="flex items-center justify-between text-sm text-blue-gray-600">
                       <span className="flex items-center gap-1">
                         <Users className="w-4 h-4" />
                         {room.participants} participants
@@ -180,7 +180,7 @@ const Index = () => {
                         {room.duration}
                       </span>
                     </div>
-                    <Button size="sm" className="mt-3 w-full bg-deep-blue-600 text-vibrant-yellow-400 hover:bg-deep-blue-700">
+                    <Button size="sm" className="mt-3 w-full bg-royal-blue-600 text-white hover:bg-royal-blue-700">
                       Join Room
                     </Button>
                   </div>
@@ -190,30 +190,30 @@ const Index = () => {
           </div>
 
           {/* Upcoming Events */}
-          <Card className="hover-lift bg-white border-4 border-deep-blue-600">
+          <Card className="hover-lift bg-white border border-soft-blue-200 shadow-sm">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-deep-blue-800">
-                <Calendar className="w-5 h-5 text-vibrant-yellow-600" />
+              <CardTitle className="flex items-center gap-2 text-blue-gray-800">
+                <Calendar className="w-5 h-5 text-royal-blue-600" />
                 Upcoming Events
               </CardTitle>
-              <CardDescription className="text-deep-blue-600">
+              <CardDescription className="text-blue-gray-600">
                 Don't miss these scheduled learning sessions
               </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid sm:grid-cols-2 gap-4">
                 {upcomingEvents.map((event) => (
-                  <div key={event.id} className="border-2 border-vibrant-yellow-400 rounded-lg p-4">
-                    <h4 className="font-semibold mb-1 text-deep-blue-800">{event.title}</h4>
-                    <p className="text-sm text-deep-blue-600 mb-2">{event.time}</p>
+                  <div key={event.id} className="border border-soft-blue-200 rounded-lg p-4">
+                    <h4 className="font-semibold mb-1 text-blue-gray-800">{event.title}</h4>
+                    <p className="text-sm text-blue-gray-600 mb-2">{event.time}</p>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-deep-blue-600 flex items-center gap-1">
+                      <span className="text-sm text-blue-gray-600 flex items-center gap-1">
                         <Users className="w-4 h-4" />
                         {event.attendees} attending
                       </span>
-                      <Badge variant="outline" className="border-deep-blue-600 text-deep-blue-800">{event.category}</Badge>
+                      <Badge variant="outline" className="border-royal-blue-300 text-royal-blue-700">{event.category}</Badge>
                     </div>
-                    <Button size="sm" variant="outline" className="mt-3 w-full bg-vibrant-yellow-400 text-deep-blue-800 border-deep-blue-600 hover:bg-deep-blue-600 hover:text-vibrant-yellow-400">
+                    <Button size="sm" variant="outline" className="mt-3 w-full bg-soft-blue-100 text-royal-blue-700 border-royal-blue-300 hover:bg-royal-blue-700 hover:text-white">
                       Set Reminder
                     </Button>
                   </div>
@@ -224,12 +224,12 @@ const Index = () => {
         </div>
 
         {/* Skills Section */}
-        <div className="py-8 border-t-4 border-deep-blue-600">
+        <div className="py-8 border-t border-gray-200">
           <SkillLibrary />
         </div>
 
         {/* Dashboard Section */}
-        <div className="py-8 border-t-4 border-deep-blue-600 pb-20">
+        <div className="py-8 border-t border-gray-200 pb-20">
           <UserDashboard />
         </div>
       </main>
@@ -243,10 +243,10 @@ const Index = () => {
       <div className="md:hidden fixed bottom-6 right-6 z-50">
         <Button
           onClick={() => setShowCreateRoom(true)}
-          className="w-14 h-14 rounded-full bg-deep-blue-600 text-vibrant-yellow-400 hover:bg-deep-blue-700 shadow-lg border-4 border-vibrant-yellow-400"
+          className="w-14 h-14 rounded-full bg-royal-blue-600 text-white hover:bg-royal-blue-700 shadow-lg border-2 border-soft-blue-200"
           size="icon"
         >
-          <span className="text-vibrant-yellow-400 text-xl">+</span>
+          <span className="text-white text-xl">+</span>
         </Button>
       </div>
     </div>
