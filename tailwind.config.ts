@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,7 +62,32 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Learning platform colors
+				// New vibrant yellow and blue colors
+				'vibrant-yellow': {
+					50: '#fffef0',
+					100: '#fffc99',
+					200: '#fffa66',
+					300: '#fffa33',
+					400: '#fffa00',
+					500: '#e6e100',
+					600: '#cccc00',
+					700: '#b3b300',
+					800: '#999900',
+					900: '#808000',
+				},
+				'deep-blue': {
+					50: '#e6f0ff',
+					100: '#b3d1ff',
+					200: '#80b3ff',
+					300: '#4d94ff',
+					400: '#1a75ff',
+					500: '#0066ff',
+					600: '#0052cc',
+					700: '#003d99',
+					800: '#002966',
+					900: '#001433',
+				},
+				// Keep existing learning platform colors for backward compatibility
 				'learning-purple': {
 					50: '#f3f1ff',
 					100: '#ebe5ff',

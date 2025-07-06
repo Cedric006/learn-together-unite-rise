@@ -14,7 +14,7 @@ export const SkillLibrary = () => {
     {
       id: "web-dev",
       name: "Web Development",
-      color: "bg-blue-100 text-blue-800",
+      color: "bg-deep-blue-200 text-deep-blue-800",
       skills: [
         { name: "React", members: 3420, level: "Beginner to Advanced", rooms: 12 },
         { name: "Vue.js", members: 1890, level: "Intermediate", rooms: 8 },
@@ -25,7 +25,7 @@ export const SkillLibrary = () => {
     {
       id: "ai-ml",
       name: "Artificial Intelligence",
-      color: "bg-purple-100 text-purple-800",
+      color: "bg-vibrant-yellow-200 text-deep-blue-800",
       skills: [
         { name: "Machine Learning", members: 2100, level: "Beginner to Advanced", rooms: 18 },
         { name: "Deep Learning", members: 1650, level: "Advanced", rooms: 9 },
@@ -36,7 +36,7 @@ export const SkillLibrary = () => {
     {
       id: "data-science",
       name: "Data Science",
-      color: "bg-green-100 text-green-800",
+      color: "bg-deep-blue-200 text-deep-blue-800",
       skills: [
         { name: "Python for Data Science", members: 2890, level: "Beginner to Advanced", rooms: 22 },
         { name: "Data Visualization", members: 1560, level: "Beginner to Intermediate", rooms: 11 },
@@ -47,7 +47,7 @@ export const SkillLibrary = () => {
     {
       id: "design",
       name: "UI/UX Design",
-      color: "bg-pink-100 text-pink-800",
+      color: "bg-vibrant-yellow-200 text-deep-blue-800",
       skills: [
         { name: "Figma", members: 2340, level: "Beginner to Advanced", rooms: 14 },
         { name: "User Research", members: 890, level: "Intermediate", rooms: 5 },
@@ -58,7 +58,7 @@ export const SkillLibrary = () => {
     {
       id: "mobile",
       name: "Mobile Development",
-      color: "bg-orange-100 text-orange-800",
+      color: "bg-deep-blue-200 text-deep-blue-800",
       skills: [
         { name: "React Native", members: 1890, level: "Intermediate", rooms: 12 },
         { name: "Flutter", members: 1560, level: "Beginner to Advanced", rooms: 9 },
@@ -69,7 +69,7 @@ export const SkillLibrary = () => {
     {
       id: "cloud",
       name: "Cloud Computing",
-      color: "bg-cyan-100 text-cyan-800",
+      color: "bg-vibrant-yellow-200 text-deep-blue-800",
       skills: [
         { name: "AWS", members: 2100, level: "Beginner to Advanced", rooms: 16 },
         { name: "Docker", members: 1890, level: "Intermediate", rooms: 11 },
@@ -91,8 +91,8 @@ export const SkillLibrary = () => {
   return (
     <div className="space-y-6">
       <div className="text-center">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">Skill Library</h2>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <h2 className="text-3xl font-bold text-deep-blue-900 mb-4">Skill Library</h2>
+        <p className="text-lg text-deep-blue-700 max-w-2xl mx-auto">
           Explore our comprehensive collection of skills and join communities of learners passionate about the same topics.
         </p>
       </div>
@@ -104,7 +104,7 @@ export const SkillLibrary = () => {
             placeholder="Search skills..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full"
+            className="w-full bg-white border-2 border-deep-blue-600 text-deep-blue-800"
           />
         </div>
         <div className="flex gap-2 flex-wrap">
@@ -112,6 +112,7 @@ export const SkillLibrary = () => {
             variant={selectedCategory === "all" ? "default" : "outline"}
             size="sm"
             onClick={() => setSelectedCategory("all")}
+            className={selectedCategory === "all" ? "bg-deep-blue-600 text-vibrant-yellow-400" : "bg-vibrant-yellow-400 text-deep-blue-800 border-deep-blue-600 hover:bg-deep-blue-600 hover:text-vibrant-yellow-400"}
           >
             All Categories
           </Button>
@@ -121,6 +122,7 @@ export const SkillLibrary = () => {
               variant={selectedCategory === category.id ? "default" : "outline"}
               size="sm"
               onClick={() => setSelectedCategory(category.id)}
+              className={selectedCategory === category.id ? "bg-deep-blue-600 text-vibrant-yellow-400" : "bg-vibrant-yellow-400 text-deep-blue-800 border-deep-blue-600 hover:bg-deep-blue-600 hover:text-vibrant-yellow-400"}
             >
               {category.name}
             </Button>
@@ -133,29 +135,29 @@ export const SkillLibrary = () => {
         {filteredCategories.map((category) => (
           <div key={category.id} className="space-y-4">
             <div className="flex items-center gap-3">
-              <h3 className="text-2xl font-semibold text-gray-900">{category.name}</h3>
+              <h3 className="text-2xl font-semibold text-deep-blue-900">{category.name}</h3>
               <Badge className={category.color}>{category.skills.length} skills</Badge>
             </div>
             
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {category.skills.map((skill, index) => (
-                <Card key={index} className="hover-lift cursor-pointer">
+                <Card key={index} className="hover-lift cursor-pointer bg-white border-4 border-deep-blue-600">
                   <CardHeader className="pb-3">
-                    <CardTitle className="text-lg">{skill.name}</CardTitle>
-                    <CardDescription>{skill.level}</CardDescription>
+                    <CardTitle className="text-lg text-deep-blue-800">{skill.name}</CardTitle>
+                    <CardDescription className="text-deep-blue-600">{skill.level}</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="flex items-center gap-1 text-gray-600">
+                        <span className="flex items-center gap-1 text-deep-blue-600">
                           <Users className="w-4 h-4" />
                           {skill.members.toLocaleString()} members
                         </span>
-                        <span className="text-learning-purple-600 font-medium">
+                        <span className="text-vibrant-yellow-600 font-medium">
                           {skill.rooms} active rooms
                         </span>
                       </div>
-                      <Button className="w-full" size="sm">
+                      <Button className="w-full bg-deep-blue-600 text-vibrant-yellow-400 hover:bg-deep-blue-700" size="sm">
                         Join Community
                       </Button>
                     </div>
@@ -169,8 +171,8 @@ export const SkillLibrary = () => {
 
       {filteredCategories.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-gray-500 text-lg">No skills found matching your search.</p>
-          <Button variant="outline" className="mt-4" onClick={() => {setSearchTerm(""); setSelectedCategory("all");}}>
+          <p className="text-deep-blue-700 text-lg">No skills found matching your search.</p>
+          <Button variant="outline" className="mt-4 bg-vibrant-yellow-400 text-deep-blue-800 border-deep-blue-600 hover:bg-deep-blue-600 hover:text-vibrant-yellow-400" onClick={() => {setSearchTerm(""); setSelectedCategory("all");}}>
             Clear Filters
           </Button>
         </div>

@@ -67,13 +67,13 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-vibrant-yellow-400">
       {/* Navigation */}
-      <nav className="bg-white border-b sticky top-0 z-40">
+      <nav className="bg-white border-b-4 border-deep-blue-600 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-8">
-              <h1 className="text-2xl font-bold text-learning-purple-600">
+              <h1 className="text-2xl font-bold text-deep-blue-800">
                 LearnTogether
               </h1>
             </div>
@@ -83,15 +83,15 @@ const Index = () => {
                 variant="outline"
                 size="sm"
                 onClick={() => setShowCreateRoom(true)}
-                className="hidden sm:flex"
+                className="hidden sm:flex bg-vibrant-yellow-400 text-deep-blue-800 border-deep-blue-600 hover:bg-deep-blue-600 hover:text-vibrant-yellow-400"
               >
                 Create Room
               </Button>
-              <Button variant="ghost" size="sm">
+              <Button variant="ghost" size="sm" className="text-deep-blue-800 hover:bg-vibrant-yellow-200">
                 <Bell className="w-4 h-4" />
               </Button>
               <Avatar className="cursor-pointer">
-                <AvatarFallback className="bg-learning-purple-100 text-learning-purple-700">
+                <AvatarFallback className="bg-deep-blue-600 text-vibrant-yellow-400">
                   <User className="w-4 h-4" />
                 </AvatarFallback>
               </Avatar>
@@ -105,22 +105,22 @@ const Index = () => {
         {/* Home Section */}
         <div className="py-8 space-y-8">
           {/* Hero Section */}
-          <div className="gradient-bg rounded-2xl p-8 text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <div className="gradient-bg rounded-2xl p-8 text-center border-4 border-deep-blue-600">
+            <h1 className="text-4xl font-bold text-deep-blue-900 mb-4">
               Learn Together, Grow Together
             </h1>
-            <p className="text-xl text-gray-600 mb-6 max-w-2xl mx-auto">
+            <p className="text-xl text-deep-blue-700 mb-6 max-w-2xl mx-auto">
               Join a thriving community of learners. Connect, collaborate, and master new skills through live voice rooms and interactive sessions.
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Button 
                 size="lg" 
-                className="bg-learning-purple-600 hover:bg-learning-purple-700"
+                className="bg-deep-blue-600 text-vibrant-yellow-400 hover:bg-deep-blue-700"
                 onClick={() => setShowCreateRoom(true)}
               >
                 Create a Room
               </Button>
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="outline" className="bg-vibrant-yellow-400 text-deep-blue-800 border-deep-blue-600 hover:bg-deep-blue-600 hover:text-vibrant-yellow-400">
                 Explore Skills
               </Button>
             </div>
@@ -128,10 +128,10 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Trending Skills */}
-            <Card className="hover-lift">
+            <Card className="hover-lift bg-white border-4 border-deep-blue-600">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-learning-purple-500 rounded-full"></div>
+                <CardTitle className="flex items-center gap-2 text-deep-blue-800">
+                  <div className="w-2 h-2 bg-vibrant-yellow-500 rounded-full"></div>
                   Trending Skills
                 </CardTitle>
               </CardHeader>
@@ -139,10 +139,10 @@ const Index = () => {
                 {trendingSkills.map((skill, index) => (
                   <div key={index} className="flex justify-between items-center">
                     <div>
-                      <p className="font-medium">{skill.name}</p>
-                      <p className="text-sm text-gray-500">{skill.members.toLocaleString()} members</p>
+                      <p className="font-medium text-deep-blue-800">{skill.name}</p>
+                      <p className="text-sm text-deep-blue-600">{skill.members.toLocaleString()} members</p>
                     </div>
-                    <Badge variant="secondary" className="text-green-600 bg-green-50">
+                    <Badge variant="secondary" className="text-deep-blue-700 bg-vibrant-yellow-200">
                       {skill.growth}
                     </Badge>
                   </div>
@@ -151,26 +151,26 @@ const Index = () => {
             </Card>
 
             {/* Live Rooms */}
-            <Card className="hover-lift lg:col-span-2">
+            <Card className="hover-lift lg:col-span-2 bg-white border-4 border-deep-blue-600">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+                <CardTitle className="flex items-center gap-2 text-deep-blue-800">
                   <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
                   Live Learning Rooms
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {liveRooms.map((room) => (
-                  <div key={room.id} className="border rounded-lg p-4 hover:bg-gray-50 transition-colors">
+                  <div key={room.id} className="border-2 border-vibrant-yellow-400 rounded-lg p-4 hover:bg-vibrant-yellow-100 transition-colors">
                     <div className="flex justify-between items-start mb-2">
                       <div>
-                        <h4 className="font-semibold">{room.title}</h4>
-                        <p className="text-sm text-gray-600">Hosted by {room.host}</p>
+                        <h4 className="font-semibold text-deep-blue-800">{room.title}</h4>
+                        <p className="text-sm text-deep-blue-600">Hosted by {room.host}</p>
                       </div>
-                      <Badge variant={room.type === 'voice' ? 'default' : 'secondary'}>
+                      <Badge variant={room.type === 'voice' ? 'default' : 'secondary'} className={room.type === 'voice' ? 'bg-deep-blue-600 text-vibrant-yellow-400' : 'bg-vibrant-yellow-400 text-deep-blue-800'}>
                         {room.type === 'voice' ? '🎤 Voice' : '💬 Chat'}
                       </Badge>
                     </div>
-                    <div className="flex items-center justify-between text-sm text-gray-500">
+                    <div className="flex items-center justify-between text-sm text-deep-blue-600">
                       <span className="flex items-center gap-1">
                         <Users className="w-4 h-4" />
                         {room.participants} participants
@@ -180,7 +180,7 @@ const Index = () => {
                         {room.duration}
                       </span>
                     </div>
-                    <Button size="sm" className="mt-3 w-full">
+                    <Button size="sm" className="mt-3 w-full bg-deep-blue-600 text-vibrant-yellow-400 hover:bg-deep-blue-700">
                       Join Room
                     </Button>
                   </div>
@@ -190,30 +190,30 @@ const Index = () => {
           </div>
 
           {/* Upcoming Events */}
-          <Card className="hover-lift">
+          <Card className="hover-lift bg-white border-4 border-deep-blue-600">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Calendar className="w-5 h-5 text-learning-blue-600" />
+              <CardTitle className="flex items-center gap-2 text-deep-blue-800">
+                <Calendar className="w-5 h-5 text-vibrant-yellow-600" />
                 Upcoming Events
               </CardTitle>
-              <CardDescription>
+              <CardDescription className="text-deep-blue-600">
                 Don't miss these scheduled learning sessions
               </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid sm:grid-cols-2 gap-4">
                 {upcomingEvents.map((event) => (
-                  <div key={event.id} className="border rounded-lg p-4">
-                    <h4 className="font-semibold mb-1">{event.title}</h4>
-                    <p className="text-sm text-gray-600 mb-2">{event.time}</p>
+                  <div key={event.id} className="border-2 border-vibrant-yellow-400 rounded-lg p-4">
+                    <h4 className="font-semibold mb-1 text-deep-blue-800">{event.title}</h4>
+                    <p className="text-sm text-deep-blue-600 mb-2">{event.time}</p>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-500 flex items-center gap-1">
+                      <span className="text-sm text-deep-blue-600 flex items-center gap-1">
                         <Users className="w-4 h-4" />
                         {event.attendees} attending
                       </span>
-                      <Badge variant="outline">{event.category}</Badge>
+                      <Badge variant="outline" className="border-deep-blue-600 text-deep-blue-800">{event.category}</Badge>
                     </div>
-                    <Button size="sm" variant="outline" className="mt-3 w-full">
+                    <Button size="sm" variant="outline" className="mt-3 w-full bg-vibrant-yellow-400 text-deep-blue-800 border-deep-blue-600 hover:bg-deep-blue-600 hover:text-vibrant-yellow-400">
                       Set Reminder
                     </Button>
                   </div>
@@ -224,12 +224,12 @@ const Index = () => {
         </div>
 
         {/* Skills Section */}
-        <div className="py-8 border-t">
+        <div className="py-8 border-t-4 border-deep-blue-600">
           <SkillLibrary />
         </div>
 
         {/* Dashboard Section */}
-        <div className="py-8 border-t pb-20">
+        <div className="py-8 border-t-4 border-deep-blue-600 pb-20">
           <UserDashboard />
         </div>
       </main>
@@ -243,10 +243,10 @@ const Index = () => {
       <div className="md:hidden fixed bottom-6 right-6 z-50">
         <Button
           onClick={() => setShowCreateRoom(true)}
-          className="w-14 h-14 rounded-full bg-learning-purple-600 hover:bg-learning-purple-700 shadow-lg"
+          className="w-14 h-14 rounded-full bg-deep-blue-600 text-vibrant-yellow-400 hover:bg-deep-blue-700 shadow-lg border-4 border-vibrant-yellow-400"
           size="icon"
         >
-          <span className="text-white text-xl">+</span>
+          <span className="text-vibrant-yellow-400 text-xl">+</span>
         </Button>
       </div>
     </div>

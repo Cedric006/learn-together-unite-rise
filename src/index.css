@@ -5,44 +5,44 @@
 
 @layer base {
   :root {
-    --background: 248 250 252;
-    --foreground: 15 23 42;
+    --background: 57 100% 50%;
+    --foreground: 240 100% 20%;
 
-    --card: 255 255 255;
-    --card-foreground: 15 23 42;
+    --card: 0 0% 100%;
+    --card-foreground: 240 100% 20%;
 
-    --popover: 255 255 255;
-    --popover-foreground: 15 23 42;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 100% 20%;
 
-    --primary: 124 61 255;
-    --primary-foreground: 248 250 252;
+    --primary: 240 100% 50%;
+    --primary-foreground: 57 100% 50%;
 
-    --secondary: 241 245 249;
-    --secondary-foreground: 15 23 42;
+    --secondary: 57 100% 50%;
+    --secondary-foreground: 240 100% 20%;
 
-    --muted: 241 245 249;
-    --muted-foreground: 100 116 139;
+    --muted: 57 100% 95%;
+    --muted-foreground: 240 30% 40%;
 
-    --accent: 239 246 255;
-    --accent-foreground: 15 23 42;
+    --accent: 57 100% 90%;
+    --accent-foreground: 240 100% 20%;
 
-    --destructive: 239 68 68;
-    --destructive-foreground: 248 250 252;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 226 232 240;
-    --input: 226 232 240;
-    --ring: 124 61 255;
+    --border: 57 50% 80%;
+    --input: 0 0% 100%;
+    --ring: 240 100% 50%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 255 255 255;
-    --sidebar-foreground: 51 65 85;
-    --sidebar-primary: 124 61 255;
-    --sidebar-primary-foreground: 248 250 252;
-    --sidebar-accent: 241 245 249;
-    --sidebar-accent-foreground: 15 23 42;
-    --sidebar-border: 226 232 240;
-    --sidebar-ring: 124 61 255;
+    --sidebar-background: 57 100% 50%;
+    --sidebar-foreground: 240 100% 20%;
+    --sidebar-primary: 240 100% 50%;
+    --sidebar-primary-foreground: 57 100% 50%;
+    --sidebar-accent: 57 100% 90%;
+    --sidebar-accent-foreground: 240 100% 20%;
+    --sidebar-border: 57 50% 80%;
+    --sidebar-ring: 240 100% 50%;
   }
 }
 
@@ -52,11 +52,11 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-vibrant-yellow-400 text-deep-blue-800 font-sans;
   }
   
   .gradient-bg {
-    background: linear-gradient(135deg, rgb(124 61 255 / 0.1) 0%, rgb(59 130 246 / 0.1) 100%);
+    background: linear-gradient(135deg, rgb(255 250 0 / 0.9) 0%, rgb(0 102 255 / 0.1) 100%);
   }
   
   .hover-lift {
