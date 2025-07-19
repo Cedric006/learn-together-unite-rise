@@ -1,7 +1,7 @@
 import CommunityHome from "@/components/community/CommunityHome";
 
-const Community = () => {
+const Communities = () => {
   return <CommunityHome />;
 };
 
-export default Community;
+export default Communities;
